@@ -1,0 +1,22 @@
+const mongoose = require('mongoose')
+
+const UserSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  isAdmin: {
+    type: Boolean,
+    required: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+})
+
+mongoose.model('User', UserSchema)
