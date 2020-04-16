@@ -2,30 +2,21 @@ const express = require('express')
 
 const routes = express.Router()
 
-const CenterSchema = require('./models/Center')
-const UserSchema = require('./models/User')
+const CenterController = require('./controllers/CenterController')
+const UserController = require('./controllers/UserController')
 
-// Rotas /login, /user, /home, /center
+// Rotas /login, /users, /home, /centers
 
-// Criar centro
-routes.post('/center', CenterSchema.create)
+routes.post('/centers', CenterController.create)
+routes.put('/centers/:id', CenterController.update)
+routes.get('/centers', CenterController.index)
+routes.get('/centers/:id', CenterController.find)
+routes.delete('/centers/:id', CenterController.delete)
 
-// Atualizar centro
-routes.put('/center', CenterSchema.update)
-
-// Deletar um centro
-routes.delete('/center/:id', CenterSchema.delete)
-
-// Listar centros
-routes.get('/center', CenterSchema.index)
-
-// Criar usuário
-routes.post('/user', UserSchema.create)
-
-// Listar usuários
-routes.get('/user', UserSchema.index)
-
-// Deletar usuário
-routes.delete('/user/:id', UserSchema.delete)
+routes.post('/users', UserController.create)
+routes.put('/users/:id', UserController.update)
+routes.get('/users', UserController.index)
+routes.get('/users/:id', UserController.find)
+routes.delete('/users/:id', UserController.delete)
 
 module.exports = routes

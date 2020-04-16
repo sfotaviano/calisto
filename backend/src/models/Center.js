@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
 const CenterSchema = new mongoose.Schema({
-  id: {
+  centerId: {
     type: String,
     required: true
   },
-  centerId: {
+  name: {
     type: String,
     required: true
   },
@@ -17,11 +17,11 @@ const CenterSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  endereco: {
+  address: {
     type: String,
     required: true
   },
-  typeCenter: {
+  centerType: {
     type: String,
     required: true
   },
@@ -29,7 +29,7 @@ const CenterSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  assistente: {
+  centerAdmin: {
     type: String,
     required: true
   },
@@ -39,4 +39,4 @@ const CenterSchema = new mongoose.Schema({
   }
 })
 
-mongoose.model('User', CenterSchema)
+mongoose.model('Center', CenterSchema)
