@@ -12,4 +12,5 @@ export const Container = styled.div`
 `
 export const TitleLogon = styled.h1`
   font-size: 28px;
+  margin-bottom: 30px;
 `

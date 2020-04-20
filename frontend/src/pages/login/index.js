@@ -6,11 +6,11 @@ export default function Login () {
   return (
     <Container>
       <section>
-        <form onSubmit={() => {}}>
+        <form onSubmit={() => {}} style={{ boxShadow: '0 0 14px 0 rgba(53,64,82,.05)', position: 'relative', background: '#fff', height: '300px', borderRadius: '5px', padding: '15px' }}>
           <TitleLogon>Faca seu logon</TitleLogon>
 
           <input
-            placeholder="Sua ID"
+            placeholder="E-mail"
             onChange={() => {}}
           />
           <button className="button" type="submit">Entrar</button>

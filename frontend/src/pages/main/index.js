@@ -1,9 +1,16 @@
 import React from 'react'
 
-function App () {
+import { Container } from './styles'
+
+import Header from '../../components/Header'
+import Drawer from '../../components/Drawer'
+
+export default function Home () {
   return (
-    <h1>Pagina Main</h1>
+    <Container>
+      <Header />
+      <Drawer />
+    </Container>
+
   )
 }
-
-export default App
