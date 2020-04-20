@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Container, HeaderTitle } from './styles'
-import { FiCodesandbox } from 'react-icons/fi'
+import { Container, HeaderTitle, ButtonRemoveHeader } from './styles'
+import { FiCodesandbox, FiX } from 'react-icons/fi'
 
 const Header = () => {
   return (
@@ -9,10 +9,18 @@ const Header = () => {
 
       <HeaderTitle>
         <FiCodesandbox style={{ marginRight: '10px' }} size={22}/>
-        Store
+          Store
       </HeaderTitle>
+
+      <ButtonRemoveHeader>
+        <FiX size={20} />
+        Remover moldura
+      </ButtonRemoveHeader>
+
     </Container>
   )
 }
 
 export default Header
+
+export const Hide = true

@@ -5,6 +5,7 @@ export const Container = styled.div`
 `
 export const DrawerHeaderDetails = styled.label`
   height: 64px;
+  width: 100%;
   background: #fff;
   color: #9d9e99;
   font-size: 22px;
@@ -46,11 +47,13 @@ export const DrawerContainer = styled.div`
   min-width: 260px;
   background: #1b2430;
   height: 100vh;
+
+  display: block;
+  position: fixed;
 `
 export const DrawerOptions = styled.ul`
   list-style-type: none;
   padding: 10px ;
-  
 `
 export const DrawerOptionDetails = styled.div`
   display: flex;

@@ -32,14 +32,14 @@ export default function Drawer () {
           </DrawerHeader>
 
           <DrawerOptions>
-            <li> <Link to="/">Home</Link> </li>
-            <li> <Link to="/bubblegum">Bubblegum</Link> </li>
-            <li> <Link to="/shoelaces">Shoelaces</Link> </li>
+            <li> <Link style={{ color: '#fff' }} to="/">Home</Link> </li>
+            <li> <Link style={{ color: '#fff' }} to="/centers">Bubblegum</Link> </li>
+            <li> <Link style={{ color: '#fff' }} to="/shoelaces">Shoelaces</Link> </li>
           </DrawerOptions>
 
         </DrawerContainer>
 
-        <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }} >
+        <div style={{ flex: '1 1 0%', background: 'red', display: 'flex', flexDirection: 'column', marginLeft: '260px', width: '100%' }} >
           <DrawerHeaderDetails>
             <Search />
             <ButtonPower>

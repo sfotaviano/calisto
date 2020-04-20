@@ -1,5 +1,7 @@
 import React from 'react'
 
+import ListCenter from '../ListCenter/index'
+
 export const routes = [
   {
     path: '/',
@@ -7,8 +9,8 @@ export const routes = [
     main: () => <h2>home</h2>
   },
   {
-    path: '/bubblegum',
-    main: () => <h2>bubblegum</h2>
+    path: '/centers',
+    main: ListCenter
   },
   {
     path: '/shoelaces',
