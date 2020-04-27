@@ -47,7 +47,7 @@ const arr = [
   }
 ]
 
-export default class ListCenter extends Component {
+export default class Centers extends Component {
   render () {
     return (
       <Container onScrollCapture={true} >

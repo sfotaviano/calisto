@@ -1,61 +1,29 @@
-import styled from 'styled-components'
+import { makeStyles } from '@material-ui/core'
+import { green } from '@material-ui/core/colors'
 
-export const Container = styled.div`
-  display: flex;
-`
-export const DrawerHeaderDetails = styled.label`
-  height: 64px;
-  width: 100%;
-  background: #fff;
-  color: #9d9e99;
-  font-size: 22px;
-  padding-left: 10px;
-  padding-right: 10px;
+const drawerWidth = 240
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
-export const ButtonPower = styled.button`
-  background: none;
-  width: 46px;
-  height: 46px;
-  border-radius: 23px;
-  border: 0;
-  color:currentColor;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &:hover {
-    background: #f0f0f0;
+const Classes = makeStyles((theme) => ({
+  root: {
+    display: 'flex'
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0
+  },
+  drawerPaper: {
+    width: drawerWidth
+  },
+  drawerContainer: {
+    overflow: 'auto'
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3)
   }
-`
-export const DrawerHeader = styled.div`
-  height: 64px;
-  background: #232F3E;
-  color: #FFF;
-  font-size: 18px;
+}))
 
-  display: flex;
-  align-items: center;
-  padding: 25px;
-`
-export const DrawerContainer = styled.div`
-  max-width: 260px;
-  min-width: 260px;
-  background: #1b2430;
-  height: 100vh;
-
-  display: block;
-  position: fixed;
-`
-export const DrawerOptions = styled.ul`
-  list-style-type: none;
-  padding: 10px ;
-`
-export const DrawerOptionDetails = styled.div`
-  display: flex;
-  padding: 0;
-`
+export default Classes

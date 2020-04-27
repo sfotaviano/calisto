@@ -1,4 +1,7 @@
 import React from 'react'
+import Classes from './styles'
+import { routesDrawer } from '../../routes'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,63 +10,71 @@ import {
 } from 'react-router-dom'
 
 import {
-  Container,
-  DrawerHeaderDetails,
-  ButtonPower,
-  DrawerHeader,
-  DrawerContainer,
-  DrawerOptions,
-  DrawerOptionDetails
-} from './styles'
+  CssBaseline,
+  AppBar,
+  Toolbar,
+  Typography,
+  Drawer,
+  MenuList,
+  MenuItem,
+  ListItemIcon,
+  ListItemText,
+  Divider
+} from '@material-ui/core'
 
-import { routes } from './options'
-import { Search } from '../Search'
-import { FiLayers, FiPower } from 'react-icons/fi'
+export default function DrawerComponent () {
+  const classes = Classes()
 
-export default function Drawer () {
   return (
     <Router>
-      <Container>
-        <DrawerContainer>
-
-          <DrawerHeader>
-            <FiLayers style={{ marginRight: '10px' }} size={24} />
+      <div className={classes.root}>
+        <CssBaseline />
+        <AppBar
+          position='fixed'
+          className={classes.appBar}
+        >
+          <Toolbar>
+            <Typography variant="h6" noWrap>
             Calisto
-          </DrawerHeader>
+            </Typography>
+          </Toolbar>
+        </AppBar>
 
-          <DrawerOptions>
-            <li> <Link style={{ color: '#fff' }} to="/">Home</Link> </li>
-            <li> <Link style={{ color: '#fff' }} to="/centers">Bubblegum</Link> </li>
-            <li> <Link style={{ color: '#fff' }} to="/shoelaces">Shoelaces</Link> </li>
-          </DrawerOptions>
+        <Drawer
+          className={classes.drawer}
+          variant='permanent'
+          classes={{ paper: classes.drawerPaper }}
+        >
+          <Toolbar />
+          <div className={classes.drawerContainer}>
+            <MenuList>
+              {routesDrawer.map((prop, key) => (
+                <Link to={prop.path} style={{ textDecoration: 'none', color: '#333' }} key={key}>
+                  <MenuItem>
+                    <ListItemIcon><prop.icon/></ListItemIcon>
+                    <ListItemText primary={prop.sidebarName}/>
+                  </MenuItem>
+                </Link>
+              ))}
+            </MenuList>
+            <Divider />
+          </div>
+        </Drawer>
 
-        </DrawerContainer>
-
-        <div style={{ flex: '1 1 0%', background: 'red', display: 'flex', flexDirection: 'column', marginLeft: '260px', width: '100%' }} >
-          <DrawerHeaderDetails>
-            <Search />
-            <ButtonPower>
-              <FiPower size={22} />
-            </ButtonPower>
-          </DrawerHeaderDetails>
-
-          <DrawerOptionDetails>
-            <Switch>
-              {
-                routes.map((route, index) => (
-                  <Route
-                    key={index}
-                    path={route.path}
-                    exact={route.exact}
-                    children={<route.main/>}
-                  />
-                ))
-              }
-            </Switch>
-          </DrawerOptionDetails>
-        </div>
-
-      </Container>
+        <main classes={classes.content}>
+          <Toolbar />
+          <Switch>
+            {routesDrawer.map((route, index) => (
+              <Route
+                key={index}
+                exact={route.exact}
+                path={route.path}
+                component={route.component}
+              />
+            ))}
+          </Switch>
+        </main>
+      </div>
     </Router>
   )
 }
