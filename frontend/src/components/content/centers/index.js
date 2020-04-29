@@ -1,6 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-import { Container, CardDetails, Title, Description } from './styles'
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
+import Avatar from '@material-ui/core/Avatar'
+import Typography from '@material-ui/core/Typography'
+
+import { FiBriefcase } from 'react-icons/fi'
+import Classes from './styles'
 
 const arr = [
   {
@@ -47,30 +53,32 @@ const arr = [
   }
 ]
 
-export default class Centers extends Component {
-  render () {
-    return (
-      <Container onScrollCapture={true} >
-        {
-          arr.map((item, index) => {
-            const ref = React.createRef()
-            const handleClick = () =>
-              ref.current.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              })
-            return (
-              <CardDetails key={index} ref={ref} >
-                <Title>{item.title}</Title>
-                <Description>{item.center}</Description>
-                <Description>{item.dep}</Description>
-                <Description>{item.cnpj}</Description>
-                <Description onClick={handleClick} >{item.adm}</Description>
-              </CardDetails>
-            )
-          })
-        }
-      </Container>
-    )
-  }
+export default function AutoGridNoWrap () {
+  const classes = Classes()
+
+  return (
+    <div className={classes.root}>
+      {arr.map((item, index) => (
+        <Paper className={classes.paper} key={index}>
+          <Grid container wrap="nowrap" spacing={2}>
+
+            <Grid item>
+              <Avatar>
+                <FiBriefcase size={22} />
+              </Avatar>
+            </Grid>
+
+            <Grid item xs>
+              <Typography>{item.title}</Typography>
+              <Typography>{item.center}</Typography>
+              <Typography>{item.dep}</Typography>
+              <Typography>{item.cnpj}</Typography>
+              <Typography>{item.adm}</Typography>
+            </Grid>
+
+          </Grid>
+        </Paper>
+      ))}
+    </div>
+  )
 }

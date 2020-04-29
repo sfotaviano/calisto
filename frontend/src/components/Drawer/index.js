@@ -35,7 +35,7 @@ export default function DrawerComponent () {
         >
           <Toolbar>
             <Typography variant="h6" noWrap>
-            Calisto
+            Jupter
             </Typography>
           </Toolbar>
         </AppBar>
