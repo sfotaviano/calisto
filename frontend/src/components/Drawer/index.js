@@ -22,6 +22,8 @@ import {
   Divider
 } from '@material-ui/core'
 
+import { IoMdPlanet } from 'react-icons/io'
+
 export default function DrawerComponent () {
   const classes = Classes()
 
@@ -34,8 +36,9 @@ export default function DrawerComponent () {
           className={classes.appBar}
         >
           <Toolbar>
-            <Typography variant="h6" noWrap>
-            Jupter
+            <Typography variant="h6" noWrap style={{ display: 'flex', alignItems: 'center' }}>
+              <IoMdPlanet size={26} style={{ marginRight: 10 }} />
+              Jupter
             </Typography>
           </Toolbar>
         </AppBar>

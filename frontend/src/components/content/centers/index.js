@@ -10,75 +10,109 @@ import Classes from './styles'
 
 const arr = [
   {
-    title: 'Bebedouro-SP',
-    center: 'Centro 002',
-    dep: 'Departamento DCC',
-    cnpj: 'CNPJ: 45236791000196',
-    adm: 'Assistente ADM: Ricardo neves'
+    name: 'Bebedouro-SP',
+    centerId: '002',
+    phone: '17 3344 1000',
+    address: 'Rua são Joao n30',
+    cnpj: '45236791000196',
+    centerType: 'DCC',
+    ip: 'DHCP',
+    centerAdmin: 'Samuel Fernandes O'
   },
   {
-    title: 'Bebedouro-SP',
-    center: 'Centro 002',
-    dep: 'Departamento DCC',
-    cnpj: 'CNPJ: 45236791000196',
-    adm: 'Assistente ADM: Ricardo neves'
+    name: 'Bebedouro-SP',
+    centerId: '002',
+    phone: '17 3344 1000',
+    address: 'Rua são Joao n30',
+    cnpj: '45236791000196',
+    centerType: 'DCC',
+    ip: 'DHCP',
+    centerAdmin: 'Samuel Fernandes O'
   },
   {
-    title: 'Bebedouro-SP',
-    center: 'Centro 002',
-    dep: 'Departamento DCC',
-    cnpj: 'CNPJ: 45236791000196',
-    adm: 'Assistente ADM: Ricardo neves'
+    name: 'Bebedouro-SP',
+    centerId: '002',
+    phone: '17 3344 1000',
+    address: 'Rua são Joao n30',
+    cnpj: '45236791000196',
+    centerType: 'DCC',
+    ip: 'DHCP',
+    centerAdmin: 'Samuel Fernandes O'
   },
   {
-    title: 'Bebedouro-SP',
-    center: 'Centro 002',
-    dep: 'Departamento DCC',
-    cnpj: 'CNPJ: 45236791000196',
-    adm: 'Assistente ADM: Ricardo neves'
+    name: 'Bebedouro-SP',
+    centerId: '002',
+    phone: '17 3344 1000',
+    address: 'Rua são Joao n30',
+    cnpj: '45236791000196',
+    centerType: 'DCC',
+    ip: 'DHCP',
+    centerAdmin: 'Samuel Fernandes O'
   },
   {
-    title: 'Bebedouro-SP',
-    center: 'Centro 002',
-    dep: 'Departamento DCC',
-    cnpj: 'CNPJ: 45236791000196',
-    adm: 'Assistente ADM: Ricardo neves'
+    name: 'Bebedouro-SP',
+    centerId: '002',
+    phone: '17 3344 1000',
+    address: 'Rua são Joao n30',
+    cnpj: '45236791000196',
+    centerType: 'DCC',
+    ip: 'DHCP',
+    centerAdmin: 'Samuel Fernandes O'
   },
   {
-    title: 'Bebedouro-SP',
-    center: 'Centro 002',
-    dep: 'Departamento DCC',
-    cnpj: 'CNPJ: 45236791000196',
-    adm: 'Assistente ADM: Ricardo neves'
+    name: 'Bebedouro-SP',
+    centerId: '002',
+    phone: '17 3344 1000',
+    address: 'Rua são Joao n30',
+    cnpj: '45236791000196',
+    centerType: 'DCC',
+    ip: 'DHCP',
+    centerAdmin: 'Samuel Fernandes O'
+  },
+  {
+    name: 'Bebedouro-SP',
+    centerId: '002',
+    phone: '17 3344 1000',
+    address: 'Rua são Joao n30',
+    cnpj: '45236791000196',
+    centerType: 'DCC',
+    ip: 'DHCP',
+    centerAdmin: 'Samuel Fernandes O'
   }
 ]
 
 export default function AutoGridNoWrap () {
   const classes = Classes()
-
   return (
     <div className={classes.root}>
-      {arr.map((item, index) => (
-        <Paper className={classes.paper} key={index}>
-          <Grid container wrap="nowrap" spacing={2}>
+      <ul className={classes.ul} >
+        {arr.map((item, index) => {
+          return (
+            <Paper className={classes.paper} key={index}>
+              <Grid container wrap="nowrap" spacing={2}>
 
-            <Grid item>
-              <Avatar>
-                <FiBriefcase size={22} />
-              </Avatar>
-            </Grid>
+                <Grid item>
+                  <Avatar>
+                    <FiBriefcase size={22} />
+                  </Avatar>
+                </Grid>
 
-            <Grid item xs>
-              <Typography>{item.title}</Typography>
-              <Typography>{item.center}</Typography>
-              <Typography>{item.dep}</Typography>
-              <Typography>{item.cnpj}</Typography>
-              <Typography>{item.adm}</Typography>
-            </Grid>
+                <Grid item xs>
+                  <Typography variant="h6">{item.name}</Typography>
+                  <Typography>Centro: {item.centerId}</Typography>
+                  <Typography>Telefone: {item.phone}</Typography>
+                  <Typography>Endereço: {item.address}</Typography>
+                  <Typography>CNPJ: {item.cnpj}</Typography>
+                  <Typography>Departamento: {item.centerType}</Typography>
+                  <Typography>IP: {item.ip}</Typography>
+                  <Typography>Administrativo: {item.centerAdmin}</Typography>
+                </Grid>
 
-          </Grid>
-        </Paper>
-      ))}
+              </Grid>
+            </Paper>
+          )
+        })}
+      </ul>
     </div>
   )
 }
