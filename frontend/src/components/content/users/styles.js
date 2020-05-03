@@ -8,9 +8,12 @@ import {
   ListItemText
 } from '@material-ui/core'
 
+var w = window.innerWidth
+
 export const Container = styled.div`
   display: flex;
-  padding: 20px;
+  padding: 10px;
+  width: ${w - 240}px;
 `
 export const ListSc = styled(List)`
   display: flex;

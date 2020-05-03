@@ -7,9 +7,6 @@ import { FiTrash } from 'react-icons/fi'
 export default function Users () {
   const arr = [0, 1, 2, 3]
 
-  var w = window.innerWidth
-  console.log(w)
-
   return (
     <Container>
       <CssBaseline />
