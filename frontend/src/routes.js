@@ -8,6 +8,7 @@ import NewUser from './pages/forms/user'
 import NewCenter from './pages/forms/center'
 
 import Centers from './components/content/centers'
+import Users from './components/content/users'
 
 export default function Routes () {
   return (
@@ -36,6 +37,6 @@ export const routesDrawer = [
     sidebarName: 'Usuarios',
     exact: true,
     icon: FiMail,
-    component: Centers
+    component: Users
   }
 ]

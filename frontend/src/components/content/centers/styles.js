@@ -8,15 +8,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center'
   },
   ul: {
-    width: '95%',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
     padding: theme.spacing(0, 3)
   },
   paper: {
-    maxWidth: widthPaper,
-    minWidth: widthPaper,
+    maxWidth: `${widthPaper}px`,
+    minWidth: `${widthPaper}px`,
     display: 'flex',
     overflow: 'hidden',
     padding: '20px',
