@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core'
-import { green } from '@material-ui/core/colors'
 
 const drawerWidth = 240
 
@@ -21,7 +20,7 @@ const Classes = makeStyles((theme) => ({
     overflow: 'auto'
   },
   content: {
-    flexGrow: 1,
+    background: 'red',
     padding: theme.spacing(3)
   }
 }))
