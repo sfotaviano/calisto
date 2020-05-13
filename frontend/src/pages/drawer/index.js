@@ -19,10 +19,13 @@ import {
   MenuItem,
   ListItemIcon,
   ListItemText,
-  Divider
+  Divider,
+  InputBase,
+  IconButton,
+  Paper
 } from '@material-ui/core'
 
-import { IoMdPlanet } from 'react-icons/io'
+import { IoMdPlanet, IoMdSearch } from 'react-icons/io'
 
 export default function DrawerComponent () {
   const classes = Classes()
@@ -35,11 +38,23 @@ export default function DrawerComponent () {
           position='fixed'
           className={classes.appBar}
         >
-          <Toolbar>
-            <Typography variant="h6" noWrap style={{ display: 'flex', alignItems: 'center' }}>
-              <IoMdPlanet size={26} style={{ marginRight: 10 }} />
+          <Typography variant="h6" noWrap style={{ display: 'flex', alignItems: 'center', justifyItems: 'start' }}>
+            <IoMdPlanet size={26} style={{ marginRight: 10 }} />
               Jupter
-            </Typography>
+          </Typography>
+          <Toolbar style={{ width: '100%', display: 'center', justifyContent: 'center' }}>
+
+            <Paper className={classes.paperSearch}>
+              <InputBase
+                className={classes.input}
+                type='search'
+                placeholder="Buscar objetos"
+              />
+              <IconButton type="submit" className={classes.iconButton} aria-label="search">
+                <IoMdSearch />
+              </IconButton>
+            </Paper>
+
           </Toolbar>
         </AppBar>
 
