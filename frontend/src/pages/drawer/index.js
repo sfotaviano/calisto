@@ -1,5 +1,5 @@
 import React from 'react'
-import Classes from './styles'
+import { Classes } from './styles'
 import { routesDrawer } from '../../routes'
 
 import {
@@ -11,21 +11,16 @@ import {
 
 import {
   CssBaseline,
-  AppBar,
   Toolbar,
-  Typography,
   Drawer,
   MenuList,
   MenuItem,
   ListItemIcon,
   ListItemText,
-  Divider,
-  InputBase,
-  IconButton,
-  Paper
+  Divider
 } from '@material-ui/core'
 
-import { IoMdPlanet, IoMdSearch } from 'react-icons/io'
+import AppBar from '../../components/header/appBar'
 
 export default function DrawerComponent () {
   const classes = Classes()
@@ -34,29 +29,7 @@ export default function DrawerComponent () {
     <Router>
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar
-          position='fixed'
-          className={classes.appBar}
-        >
-          <Typography variant="h6" noWrap style={{ display: 'flex', alignItems: 'center', justifyItems: 'start' }}>
-            <IoMdPlanet size={26} style={{ marginRight: 10 }} />
-              Jupter
-          </Typography>
-          <Toolbar style={{ width: '100%', display: 'center', justifyContent: 'center' }}>
-
-            <Paper className={classes.paperSearch}>
-              <InputBase
-                className={classes.input}
-                type='search'
-                placeholder="Buscar objetos"
-              />
-              <IconButton type="submit" className={classes.iconButton} aria-label="search">
-                <IoMdSearch />
-              </IconButton>
-            </Paper>
-
-          </Toolbar>
-        </AppBar>
+        <AppBar />
 
         <Drawer
           className={classes.drawer}

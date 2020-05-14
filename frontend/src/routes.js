@@ -7,8 +7,8 @@ import NavDrawer from './pages/drawer'
 import NewUser from './pages/forms/user'
 import NewCenter from './pages/forms/center'
 
-import Centers from './components/content/centers'
-import Users from './components/content/users'
+import Centers from './components/centers'
+import Users from './components/users'
 
 export default function Routes () {
   return (
