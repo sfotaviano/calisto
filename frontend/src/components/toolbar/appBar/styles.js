@@ -15,12 +15,16 @@ export const ToolbarContainer = styled(Toolbar)`
 export const Logo = styled.div`
   display: flex;
   flex-direction: row;
+  margin-right: 80px;
 `
 export const LogoText = styled(Typography)`
   margin-left: 20px;
-`
-export const ProfileMenu = styled.div`
-  display: flex;
+  
+  &:hover {
+    cursor: pointer;
+    color: red;
+    border-bottom-width: 1;
+  }
 `
 export const Classes = makeStyles((theme) => ({
   zIndex: {

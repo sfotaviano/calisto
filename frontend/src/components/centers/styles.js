@@ -10,8 +10,7 @@ const useStyles = makeStyles((theme) => ({
   ul: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'center',
-    padding: theme.spacing(0, 3)
+    justifyContent: 'center'
   },
   paper: {
     maxWidth: `${widthPaper}px`,

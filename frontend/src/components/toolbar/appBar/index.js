@@ -1,9 +1,10 @@
 import React from 'react'
 
-import { Classes, AppBarContainer, ToolbarContainer, Logo, LogoText, ProfileMenu } from './styles'
+import { Classes, AppBarContainer, ToolbarContainer, Logo, LogoText } from './styles'
 
-import { IoMdPlanet, IoMdMenu } from 'react-icons/io'
+import { IoMdPlanet } from 'react-icons/io'
 import SearchComp from '../search'
+import Profile from '../profile'
 
 export default function AppBars () {
   const classes = Classes()
@@ -22,9 +23,7 @@ export default function AppBars () {
 
         <SearchComp />
 
-        <ProfileMenu>
-          <IoMdMenu size={24}/>
-        </ProfileMenu>
+        <Profile />
 
       </ToolbarContainer>
     </AppBarContainer>

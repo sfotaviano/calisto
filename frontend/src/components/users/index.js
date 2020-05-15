@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, ListSc, ListItemSc, ListItemAvatarSc, AvatarSc, ListItemTextSc } from './styles'
+import { Container, ListSc, ListPaper, ListItemSc, ListItemAvatarSc, AvatarSc, ListItemTextSc } from './styles'
 import { CssBaseline } from '@material-ui/core'
 import { FiTrash } from 'react-icons/fi'
 
@@ -13,13 +13,15 @@ export default function Users () {
       <ListSc>
         {arr.map((item, index) => {
           return (
-            <ListItemSc key={index}>
-              <ListItemAvatarSc>
-                <AvatarSc />
-              </ListItemAvatarSc>
-              <ListItemTextSc primary={`Usuario numero ${item + 1}`}/>
-              <FiTrash size={24} />
-            </ListItemSc>
+            <ListPaper key={index}>
+              <ListItemSc>
+                <ListItemAvatarSc>
+                  <AvatarSc />
+                </ListItemAvatarSc>
+                <ListItemTextSc primary={`Usuario numero ${item + 1}`}/>
+                <FiTrash size={24} />
+              </ListItemSc>
+            </ListPaper>
           )
         })}
       </ListSc>

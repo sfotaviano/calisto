@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { InputBase } from '@material-ui/core'
 
-export const SearchCustom = styled.div`
+export const Container = styled.div`
   width: 920px;
   min-width: 270px;
   height: 35px;
@@ -23,7 +23,7 @@ export const SearchIcon = styled.div`
   justify-content: center;
   align-items:center;
 `
-export const InputSearch = styled(InputBase)`
+export const SearchInput = styled(InputBase)`
   width: 100%;
   padding-left: 60px;
   padding-right: 10px;

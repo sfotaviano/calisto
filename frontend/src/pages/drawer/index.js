@@ -1,5 +1,5 @@
 import React from 'react'
-import { Classes } from './styles'
+import { Classes, HeaderDivider } from './styles'
 import { routesDrawer } from '../../routes'
 
 import {
@@ -20,7 +20,8 @@ import {
   Divider
 } from '@material-ui/core'
 
-import AppBar from '../../components/header/appBar'
+import AppBar from '../../components/toolbar/appBar'
+import Header from '../../components/header'
 
 export default function DrawerComponent () {
   const classes = Classes()
@@ -52,19 +53,24 @@ export default function DrawerComponent () {
           </div>
         </Drawer>
 
-        <main classes={classes.content}>
+        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', padding: '40px' }}>
           <Toolbar />
-          <Switch>
-            {routesDrawer.map((route, index) => (
-              <Route
-                key={index}
-                exact={route.exact}
-                path={route.path}
-                component={route.component}
-              />
-            ))}
-          </Switch>
-        </main>
+          <Header />
+          <HeaderDivider />
+          <div className={classes.content}>
+            <Switch>
+              {routesDrawer.map((route, index) => (
+                <Route
+                  key={index}
+                  exact={route.exact}
+                  path={route.path}
+                  component={route.component}
+                />
+              ))}
+            </Switch>
+          </div>
+        </div>
+
       </div>
     </Router>
   )

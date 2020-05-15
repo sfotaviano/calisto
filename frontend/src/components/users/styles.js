@@ -5,21 +5,25 @@ import {
   ListItem,
   ListItemAvatar,
   Avatar,
-  ListItemText
+  ListItemText,
+  Paper
 } from '@material-ui/core'
-
-var w = window.innerWidth
 
 export const Container = styled.div`
   display: flex;
-  padding: 10px;
-  width: ${w - 240}px;
+  width: 100%;
+  justify-content: center;
 `
 export const ListSc = styled(List)`
   display: flex;
   width: 100%;
   flex-direction: column;
   flex-grow: 1;
+`
+export const ListPaper = styled(Paper)`
+  display: flex;
+  width: 920px;
+  margin-top: 8px;
 `
 export const ListItemSc = styled(ListItem)`
   display: flex;
