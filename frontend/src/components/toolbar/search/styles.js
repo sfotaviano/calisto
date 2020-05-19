@@ -3,8 +3,7 @@ import styled from 'styled-components'
 import { InputBase } from '@material-ui/core'
 
 export const Container = styled.div`
-  width: 920px;
-  min-width: 270px;
+  width: 270px;
   height: 35px;
   opacity: 0.4;
   background: white;

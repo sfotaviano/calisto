@@ -5,20 +5,17 @@ const widthPaper = 400
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    width: '100%'
   },
-  ul: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center'
+  grid: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr 1fr',
+    gap: '5px'
   },
-  paper: {
-    maxWidth: `${widthPaper}px`,
-    minWidth: `${widthPaper}px`,
-    display: 'flex',
-    overflow: 'hidden',
-    padding: '20px',
-    margin: theme.spacing(1, 1)
+  card: {
+    width: `${widthPaper}px`,
+    display: 'flex'
   }
 }))
 

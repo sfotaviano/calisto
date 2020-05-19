@@ -15,7 +15,7 @@ export const ToolbarContainer = styled(Toolbar)`
 export const Logo = styled.div`
   display: flex;
   flex-direction: row;
-  margin-right: 80px;
+  margin-right: 24px;
 `
 export const LogoText = styled(Typography)`
   margin-left: 20px;

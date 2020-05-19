@@ -8,11 +8,9 @@ export const HeaderDivider = styled(Divider)`
   margin-top: 24px;
   margin-bottom: 24px;
 `
-
 export const Classes = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    justifyContent: 'center',
     width: '100%'
   },
   drawer: {
@@ -26,7 +24,6 @@ export const Classes = makeStyles((theme) => ({
     overflow: 'auto'
   },
   content: {
-    display: 'flex',
-    width: '100%'
+    display: 'flex'
   }
 }))

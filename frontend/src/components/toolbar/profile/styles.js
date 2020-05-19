@@ -4,7 +4,7 @@ import { IconButton } from '@material-ui/core'
 
 export const Container = styled.div`
   display: flex;
-  margin-left: 80px;
+  margin-left: 24px;
 `
 export const ButtonIcon = styled(IconButton)`
   color: unset;

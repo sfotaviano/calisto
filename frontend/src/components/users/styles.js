@@ -1,37 +1,41 @@
 import styled from 'styled-components'
 
-import {
-  List,
-  ListItem,
-  ListItemAvatar,
-  Avatar,
-  ListItemText,
-  Paper
-} from '@material-ui/core'
+import ListMi from '@material-ui/core/List'
+import ListItemMi from '@material-ui/core/ListItem'
+import ListItemAvatarMi from '@material-ui/core/ListItemAvatar'
+import AvatarMi from '@material-ui/core/Avatar'
+import ListItemTextMi from '@material-ui/core/ListItemText'
+import IconButtonMi from '@material-ui/core/IconButton'
 
 export const Container = styled.div`
   display: flex;
   width: 100%;
-  justify-content: center;
 `
-export const ListSc = styled(List)`
+export const List = styled(ListMi)`
   display: flex;
   width: 100%;
   flex-direction: column;
-  flex-grow: 1;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px #f1f1f1;
 `
-export const ListPaper = styled(Paper)`
-  display: flex;
-  width: 920px;
-  margin-top: 8px;
-`
-export const ListItemSc = styled(ListItem)`
+export const ListItem = styled(ListItemMi)`
   display: flex;
   justify-content: space-between;
+  &:hover {
+    background-color: #fafafa;
+  }
 `
-export const ListItemAvatarSc = styled(ListItemAvatar)`
+export const ListItemAvatar = styled(ListItemAvatarMi)`
 `
-export const AvatarSc = styled(Avatar)`
+export const Avatar = styled(AvatarMi)`
+  background: blue;
 `
-export const ListItemTextSc = styled(ListItemText)`
+export const ListItemTextColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+export const ListItemText = styled(ListItemTextMi)`
+`
+export const IconButton = styled(IconButtonMi)`
 `

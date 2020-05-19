@@ -21,7 +21,9 @@ export default function AppBars () {
           <LogoText variant="h6">Jupter</LogoText>
         </Logo>
 
-        <SearchComp />
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
+          <SearchComp />
+        </div>
 
         <Profile />
 

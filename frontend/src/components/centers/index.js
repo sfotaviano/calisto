@@ -1,7 +1,8 @@
 import React from 'react'
 
-import Paper from '@material-ui/core/Paper'
+import Card from '@material-ui/core/Card'
 import Grid from '@material-ui/core/Grid'
+import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'
 
@@ -81,35 +82,39 @@ const arr = [
   }
 ]
 
-export default function AutoGridNoWrap () {
+export default function GridCenter () {
   const classes = Classes()
   return (
+
     <div className={classes.root}>
-      <ul className={classes.ul} >
+      <ul className={classes.grid} >
+
         {arr.map((item, index) => {
           return (
-            <Paper className={classes.paper} key={index}>
-              <Grid container wrap="nowrap" spacing={2}>
 
-                <Grid item>
+            <Card className={classes.card} key={index} variant="outlined">
+              <CardContent>
+
+                <div item>
                   <Avatar>
                     <FiBriefcase size={22} />
                   </Avatar>
-                </Grid>
+                </div>
 
-                <Grid item xs>
-                  <Typography variant="h6">{item.name}</Typography>
-                  <Typography>Centro: {item.centerId}</Typography>
-                  <Typography>Telefone: {item.phone}</Typography>
-                  <Typography>Endereço: {item.address}</Typography>
-                  <Typography>CNPJ: {item.cnpj}</Typography>
-                  <Typography>Departamento: {item.centerType}</Typography>
-                  <Typography>IP: {item.ip}</Typography>
-                  <Typography>Administrativo: {item.centerAdmin}</Typography>
-                </Grid>
+                <div item>
+                  <Typography variant="h5" component="h2">{item.name}</Typography>
+                  <Typography variant="body2" component="p">Centro: {item.centerId}</Typography>
+                  <Typography variant="body2" component="p">Telefone: {item.phone}</Typography>
+                  <Typography variant="body2" component="p">Endereço: {item.address}</Typography>
+                  <Typography variant="body2" component="p">CNPJ: {item.cnpj}</Typography>
+                  <Typography variant="body2" component="p">Departamento: {item.centerType}</Typography>
+                  <Typography variant="body2" component="p">IP: {item.ip}</Typography>
+                  <Typography variant="body2" component="p">Administrativo: {item.centerAdmin}</Typography>
+                </div>
 
-              </Grid>
-            </Paper>
+              </CardContent>
+            </Card>
+
           )
         })}
       </ul>
