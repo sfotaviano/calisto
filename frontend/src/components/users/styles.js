@@ -6,17 +6,25 @@ import ListItemAvatarMi from '@material-ui/core/ListItemAvatar'
 import AvatarMi from '@material-ui/core/Avatar'
 import ListItemTextMi from '@material-ui/core/ListItemText'
 import IconButtonMi from '@material-ui/core/IconButton'
+import ButtonMi from '@material-ui/core/Button'
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
 `
+export const Header = styled.div``
+export const HeaderButton = styled.div``
+export const HeaderButtonItem = styled(ButtonMi)`
+`
+
 export const List = styled(ListMi)`
   display: flex;
   width: 100%;
+  min-width: 720px;
   flex-direction: column;
   background: white;
-  border-radius: 4px;
+  border-radius: 3px;
   box-shadow: 0px 0px 10px #f1f1f1;
 `
 export const ListItem = styled(ListItemMi)`

@@ -17,8 +17,8 @@ export default function Routes () {
         <Route path="/" exact component={NavDrawer} />
         <Route path="/auth" component={Auth} />
         <Route path="/main" component={NavDrawer} />
-        <Route path="/users#/ew" component={NewUser} />
-        <Route path="/centers/new" component={NewCenter} />
+{/*         <Route path="/users/new" component={NewUser} />
+        <Route path="/centers/new" component={NewCenter} /> */}
       </Switch>
     </BrowserRouter>
   )
