@@ -4,8 +4,8 @@ import { FiInbox, FiMail } from 'react-icons/fi'
 
 import Auth from './pages/auth'
 import NavDrawer from './pages/drawer'
-import NewUser from './pages/forms/user'
-import NewCenter from './pages/forms/center'
+/* import NewUser from './pages/forms/user'
+import NewCenter from './pages/forms/center' */
 
 import Centers from './components/centers'
 import Users from './components/users'
@@ -17,7 +17,8 @@ export default function Routes () {
         <Route path="/" exact component={NavDrawer} />
         <Route path="/auth" component={Auth} />
         <Route path="/main" component={NavDrawer} />
-{/*         <Route path="/users/new" component={NewUser} />
+        <Route />
+        {/*         <Route path="/users/new" component={NewUser} />
         <Route path="/centers/new" component={NewCenter} /> */}
       </Switch>
     </BrowserRouter>

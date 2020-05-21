@@ -11,10 +11,10 @@ export default function Users () {
 
   return (
     <Container>
-      <HeaderNew 
+      <HeaderNew
         title="Header"
         title2="button"
-        handleOnClick={() => {alert("Funcao funcionou com exito")}}
+        handleOnClick={() => { alert('Funcao funcionou com exito') }}
       />
 
       <Header>

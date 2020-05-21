@@ -20,9 +20,6 @@ export const Classes = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth
   },
-  drawerContainer: {
-    overflow: 'auto'
-  },
   content: {
     display: 'flex'
   }

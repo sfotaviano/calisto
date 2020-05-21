@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Container, ButtonIcon } from './styles'
-import { Menu, MenuItem } from '@material-ui/core'
+import { Menu, MenuItem, Tooltip } from '@material-ui/core'
 import { FiUser } from 'react-icons/fi'
 
 export default function Profile () {
@@ -17,9 +17,11 @@ export default function Profile () {
 
   return (
     <Container>
-      <ButtonIcon aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        <FiUser size={24}/>
-      </ButtonIcon>
+      <Tooltip title='Perfil do usuário'>
+        <ButtonIcon aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+          <FiUser size={24}/>
+        </ButtonIcon>
+      </Tooltip>
 
       <Menu
         id='simple-menu'

@@ -13,8 +13,8 @@ import {
   CssBaseline,
   Toolbar,
   Drawer,
-  MenuList,
-  MenuItem,
+  List,
+  ListItem,
   ListItemIcon,
   ListItemText,
   Divider
@@ -38,25 +38,24 @@ export default function DrawerComponent () {
           classes={{ paper: classes.drawerPaper }}
         >
           <Toolbar />
-          <div className={classes.drawerContainer}>
-            <MenuList>
-              {routesDrawer.map((prop, key) => (
-                <Link to={prop.path} style={{ textDecoration: 'none', color: '#333' }} key={key}>
-                  <MenuItem>
-                    <ListItemIcon><prop.icon/></ListItemIcon>
-                    <ListItemText primary={prop.sidebarName}/>
-                  </MenuItem>
-                </Link>
-              ))}
-            </MenuList>
-            <Divider />
-          </div>
+          <List>
+            {routesDrawer.map((prop, key) => (
+              <Link to={prop.path} style={{ textDecoration: 'none', color: '#333' }} key={key}>
+                <ListItem button>
+                  <ListItemIcon><prop.icon/></ListItemIcon>
+                  <ListItemText primary={prop.sidebarName}/>
+                </ListItem>
+              </Link>
+            ))}
+          </List>
+          <Divider />
         </Drawer>
 
         <div style={{ display: 'flex', flexDirection: 'column', width: '100%', padding: '40px' }}>
           <Toolbar />
           <Header />
           <HeaderDivider />
+
           <div className={classes.content}>
             <Switch>
               {routesDrawer.map((route, index) => (
@@ -65,9 +64,11 @@ export default function DrawerComponent () {
                   exact={route.exact}
                   path={route.path}
                   component={route.component}
+                  nodeId={route.nodeId}
                 />
               ))}
             </Switch>
+
           </div>
         </div>
 
