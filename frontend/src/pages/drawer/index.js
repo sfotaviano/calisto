@@ -53,9 +53,6 @@ export default function DrawerComponent () {
 
         <div style={{ display: 'flex', flexDirection: 'column', width: '100%', padding: '40px' }}>
           <Toolbar />
-          <Header />
-          <HeaderDivider />
-
           <div className={classes.content}>
             <Switch>
               {routesDrawer.map((route, index) => (

@@ -1,30 +1,22 @@
 import React from 'react'
 
-import { Container, List, ListItem, ListItemAvatar, Avatar, ListItemTextColumn, ListItemText, IconButton, Header, HeaderButton, HeaderButtonItem } from './styles'
+import { Container, List, ListItem, ListItemAvatar, Avatar, ListItemTextColumn, ListItemText, IconButton } from './styles'
 import { Chip } from '@material-ui/core'
 import { FiDelete, FiEdit, FiEye, FiPlus } from 'react-icons/fi'
 
-import HeaderNew from '../header'
+import Header from '../header'
 
 export default function Users () {
   const arr = [0, 1, 2, 3]
 
   return (
     <Container>
-      <HeaderNew
-        title="Header"
-        title2="button"
-        handleOnClick={() => { alert('Funcao funcionou com exito') }}
+      <Header
+        headerText="Header user"
+        buttonIcon={<FiPlus size={22}/>}
+        buttonText="button user"
+        handleClick={() => { alert('Mensagem de "Usuarios"') }}
       />
-
-      <Header>
-        <HeaderButton>
-          <HeaderButtonItem variant="contained" color="primary">
-            <FiPlus size={24}/>
-            Novo usuario
-          </HeaderButtonItem>
-        </HeaderButton>
-      </Header>
 
       <List disablePadding>
         {arr.map((item, index) => {
