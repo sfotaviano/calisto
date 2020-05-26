@@ -1,6 +1,15 @@
 import React from 'react'
 
-import { Container, List, ListItem, ListItemAvatar, Avatar, ListItemTextColumn, ListItemText, IconButton } from './styles'
+import {
+  Container,
+  List,
+  ListItem,
+  ListItemAvatar,
+  Avatar,
+  ListItemTextColumn,
+  ListItemText,
+  IconButton
+} from './styles'
 import { Chip } from '@material-ui/core'
 import { FiDelete, FiEdit, FiEye, FiPlus } from 'react-icons/fi'
 
@@ -13,9 +22,11 @@ export default function Users () {
     <Container>
       <Header
         headerText="Header user"
-        buttonIcon={<FiPlus size={22}/>}
+        buttonIcon={<FiPlus size={22} />}
         buttonText="button user"
-        handleClick={() => { alert('Mensagem de "Usuarios"') }}
+        handleClick={() => {
+          alert('Mensagem de "Usuarios"')
+        }}
       />
 
       <List disablePadding>
@@ -27,8 +38,8 @@ export default function Users () {
               </ListItemAvatar>
 
               <ListItemTextColumn>
-                <ListItemText primary={`Usuario numero ${item + 1}`}/>
-                <ListItemText primary={`Email@mail.com ${item + 1}`}/>
+                <ListItemText primary={`Usuario numero ${item + 1}`} />
+                <ListItemText primary={`Email@mail.com ${item + 1}`} />
               </ListItemTextColumn>
 
               <Chip size="small" label="Administrador" color="secondary" />
@@ -46,7 +57,6 @@ export default function Users () {
                   <FiDelete size={24} />
                 </IconButton>
               </div>
-
             </ListItem>
           )
         })}

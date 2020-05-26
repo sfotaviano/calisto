@@ -6,7 +6,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     justifyContent: 'center',
+    flexDirection: 'column',
     width: '100%'
+  },
+  containerGrid: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center'
   },
   grid: {
     display: 'grid',
@@ -14,8 +20,8 @@ const useStyles = makeStyles((theme) => ({
     gap: '5px'
   },
   card: {
-    width: `${widthPaper}px`,
-    display: 'flex'
+    display: 'flex',
+    width: `${widthPaper}px`
   }
 }))
 

@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography'
 import { FiBriefcase } from 'react-icons/fi'
 import Classes from './styles'
 
+import Header from '../header'
+
 const arr = [
   {
     name: 'Bebedouro-SP',
@@ -83,40 +85,46 @@ const arr = [
 
 export default function GridCenter () {
   const classes = Classes()
+
   return (
-
     <div className={classes.root}>
-      <ul className={classes.grid} >
+      <Header
+        headerText="Header center"
+        buttonText="button center"
+        handleClick={() => { alert('Mensagem de "Centros"') }}
+      />
+      <div className={classes.containerGrid}>
+        <ul className={classes.grid}>
+          {arr.map((item, index) => {
+            return (
 
-        {arr.map((item, index) => {
-          return (
+              <Card className={classes.card} key={index} variant="outlined">
+                <CardContent>
 
-            <Card className={classes.card} key={index} variant="outlined">
-              <CardContent>
+                  <div item>
+                    <Avatar>
+                      <FiBriefcase size={22} />
+                    </Avatar>
+                  </div>
 
-                <div item>
-                  <Avatar>
-                    <FiBriefcase size={22} />
-                  </Avatar>
-                </div>
+                  <div item>
+                    <Typography variant="h5" component="h2">{item.name}</Typography>
+                    <Typography variant="body2" component="p">Centro: {item.centerId}</Typography>
+                    <Typography variant="body2" component="p">Telefone: {item.phone}</Typography>
+                    <Typography variant="body2" component="p">Endereço: {item.address}</Typography>
+                    <Typography variant="body2" component="p">CNPJ: {item.cnpj}</Typography>
+                    <Typography variant="body2" component="p">Departamento: {item.centerType}</Typography>
+                    <Typography variant="body2" component="p">IP: {item.ip}</Typography>
+                    <Typography variant="body2" component="p">Administrativo: {item.centerAdmin}</Typography>
+                  </div>
 
-                <div item>
-                  <Typography variant="h5" component="h2">{item.name}</Typography>
-                  <Typography variant="body2" component="p">Centro: {item.centerId}</Typography>
-                  <Typography variant="body2" component="p">Telefone: {item.phone}</Typography>
-                  <Typography variant="body2" component="p">Endereço: {item.address}</Typography>
-                  <Typography variant="body2" component="p">CNPJ: {item.cnpj}</Typography>
-                  <Typography variant="body2" component="p">Departamento: {item.centerType}</Typography>
-                  <Typography variant="body2" component="p">IP: {item.ip}</Typography>
-                  <Typography variant="body2" component="p">Administrativo: {item.centerAdmin}</Typography>
-                </div>
+                </CardContent>
+              </Card>
 
-              </CardContent>
-            </Card>
-
-          )
-        })}
-      </ul>
+            )
+          })}
+        </ul>
+      </div>
     </div>
   )
 }
