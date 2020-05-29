@@ -12,7 +12,7 @@ export default function SearchComp () {
       </SearchIcon>
       <SearchInput
         type='search'
-        placeholder="Busca..."
+        placeholder="Procurar..."
       />
     </Container>
   )

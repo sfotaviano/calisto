@@ -1,5 +1,5 @@
-import React from 'react'
-import { Classes, HeaderDivider } from './styles'
+import React, { useState } from 'react'
+import { Classes } from './styles'
 import { routesDrawer } from '../../routes'
 
 import {
@@ -17,14 +17,18 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Divider
+  ListSubheader
 } from '@material-ui/core'
 
 import AppBar from '../../components/toolbar/appBar'
-import Header from '../../components/header'
 
 export default function DrawerComponent () {
   const classes = Classes()
+  const [selectedItem, setSelectedItem] = useState()
+
+  const handleListItemClick = (index) => {
+    setSelectedItem(index)
+  }
 
   return (
     <Router>
@@ -40,15 +44,24 @@ export default function DrawerComponent () {
           <Toolbar />
           <List>
             {routesDrawer.map((prop, key) => (
-              <Link to={prop.path} style={{ textDecoration: 'none', color: '#333' }} key={key}>
-                <ListItem button>
-                  <ListItemIcon><prop.icon/></ListItemIcon>
+              <Link
+                to={prop.path}
+                key={key}
+                style={{ textDecoration: 'none', color: '#333' }}
+              >
+                <ListSubheader>{prop.subHeader}</ListSubheader>
+                <ListItem
+                  button
+                  divider={prop.divider}
+                  selected={selectedItem === key}
+                  onClick={() => handleListItemClick(key)}
+                >
+                  <ListItemIcon><prop.icon size={22}/></ListItemIcon>
                   <ListItemText primary={prop.sidebarName}/>
                 </ListItem>
               </Link>
             ))}
           </List>
-          <Divider />
         </Drawer>
 
         <div style={{ display: 'flex', flexDirection: 'column', width: '100%', padding: '40px' }}>
@@ -61,11 +74,9 @@ export default function DrawerComponent () {
                   exact={route.exact}
                   path={route.path}
                   component={route.component}
-                  nodeId={route.nodeId}
                 />
               ))}
             </Switch>
-
           </div>
         </div>
 

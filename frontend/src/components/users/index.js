@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-  Container,
+  Root,
   List,
   ListItem,
   ListItemAvatar,
@@ -19,11 +19,12 @@ export default function Users () {
   const arr = [0, 1, 2, 3]
 
   return (
-    <Container>
+    <Root>
       <Header
-        headerText="Header user"
+        headerText="Usuários"
         buttonIcon={<FiPlus size={22} />}
-        buttonText="button user"
+        buttonText="adicionar"
+        tooltip="Novo usuário"
         handleClick={() => {
           alert('Mensagem de "Usuarios"')
         }}
@@ -61,6 +62,6 @@ export default function Users () {
           )
         })}
       </List>
-    </Container>
+    </Root>
   )
 }

@@ -1,28 +1,34 @@
-import { makeStyles } from '@material-ui/core'
+import styled from 'styled-components'
 
-const widthPaper = 400
+import CardMi from '@material-ui/core/Card'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    width: '100%'
-  },
-  containerGrid: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center'
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr',
-    gap: '5px'
-  },
-  card: {
-    display: 'flex',
-    width: `${widthPaper}px`
+export const Root = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`
+export const Container = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+`
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+
+  @media(max-width: 1440px ) {
+    grid-template-columns: 1fr 1fr;
   }
-}))
 
-export default useStyles
+  @media(max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+`
+export const Card = styled(CardMi)`
+  display: flex;
+  width: 400px;
+`

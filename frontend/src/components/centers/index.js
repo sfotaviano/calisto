@@ -1,12 +1,11 @@
 import React from 'react'
 
-import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'
 
-import { FiBriefcase } from 'react-icons/fi'
-import Classes from './styles'
+import { FiBriefcase, FiPlus } from 'react-icons/fi'
+import { Root, Container, Grid, Card } from './styles'
 
 import Header from '../header'
 
@@ -84,21 +83,23 @@ const arr = [
 ]
 
 export default function GridCenter () {
-  const classes = Classes()
-
   return (
-    <div className={classes.root}>
+    <Root>
       <Header
-        headerText="Header center"
-        buttonText="button center"
+        headerText="Centros"
+        buttonText="adicionar"
+        tooltip="Novo centro"
+        buttonIcon={<FiPlus size={22} />}
         handleClick={() => { alert('Mensagem de "Centros"') }}
       />
-      <div className={classes.containerGrid}>
-        <ul className={classes.grid}>
+      <Container>
+        <Grid>
           {arr.map((item, index) => {
             return (
-
-              <Card className={classes.card} key={index} variant="outlined">
+              <Card
+                key={index}
+                variant="outlined"
+              >
                 <CardContent>
 
                   <div item>
@@ -120,11 +121,10 @@ export default function GridCenter () {
 
                 </CardContent>
               </Card>
-
             )
           })}
-        </ul>
-      </div>
-    </div>
+        </Grid>
+      </Container>
+    </Root>
   )
 }

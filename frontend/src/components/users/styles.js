@@ -7,7 +7,7 @@ import AvatarMi from '@material-ui/core/Avatar'
 import ListItemTextMi from '@material-ui/core/ListItemText'
 import IconButtonMi from '@material-ui/core/IconButton'
 
-export const Container = styled.div`
+export const Root = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;

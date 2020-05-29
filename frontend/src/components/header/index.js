@@ -1,28 +1,26 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 
-import { Container, ContainerRow, Divider } from './styles'
-import { Typography, Button } from '@material-ui/core'
+import { Root, Container, Divider } from './styles'
+import { Typography, Button, Tooltip } from '@material-ui/core'
 
 export default function Header (props) {
-  const headerText = props.headerText
-  const buttonIcon = props.buttonIcon
-  const buttonText = props.buttonText
-  const handleClick = props.handleClick
-
   return (
-    <Container>
-      <ContainerRow>
-        <Typography variant='h5'>{headerText}</Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleClick}
-        >
-          {buttonIcon}
-          {buttonText}
-        </Button>
-      </ContainerRow>
+    <Root>
+      <Container>
+        <Typography variant='h5'>{props.headerText}</Typography>
+        <Tooltip title={props.tooltip}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={props.handleClick}
+          >
+            {props.buttonIcon}
+            {props.buttonText}
+          </Button>
+        </Tooltip>
+      </Container>
       <Divider />
-    </Container>
+    </Root>
   )
 }

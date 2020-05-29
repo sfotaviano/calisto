@@ -1,13 +1,7 @@
-import styled from 'styled-components'
-
-import { Divider, makeStyles } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
 
 const drawerWidth = 240
 
-export const HeaderDivider = styled(Divider)`
-  margin-top: 24px;
-  margin-bottom: 24px;
-`
 export const Classes = makeStyles((theme) => ({
   root: {
     display: 'flex',

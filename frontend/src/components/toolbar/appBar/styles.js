@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-import { makeStyles, AppBar, Typography, Toolbar } from '@material-ui/core'
+import { makeStyles, AppBar, Toolbar } from '@material-ui/core'
+import LinkRr from 'react-router-dom/Link'
 
 export const AppBarContainer = styled(AppBar)`
   display: flex;
@@ -14,16 +15,20 @@ export const ToolbarContainer = styled(Toolbar)`
 `
 export const Logo = styled.div`
   display: flex;
+  align-items: center;
   flex-direction: row;
   margin-right: 24px;
 `
-export const LogoText = styled(Typography)`
+export const Link = styled(LinkRr)`
   margin-left: 20px;
-  
+  font-size: 22px;
+  font-weight: bold;
+  color: unset;
+  text-decoration: none;
+
   &:hover {
-    cursor: pointer;
-    color: red;
-    border-bottom-width: 1;
+    color: #87ceeb;
+    text-decoration: underline;
   }
 `
 export const Classes = makeStyles((theme) => ({
